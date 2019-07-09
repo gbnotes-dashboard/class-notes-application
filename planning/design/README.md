@@ -46,5 +46,6 @@ Images and notes go here
 
 ![Git Branching and Merging](dashboard-open-folder-page.png "Git Branching and Merging")
 
+![Git Branching and Merging](dashboard-research-result-page.png "Git Branching and Merging")
 
-![Git Branching and Merging](dashboard-research-result-page.png"Git Branching and Merging")
+
