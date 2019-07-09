@@ -20,6 +20,7 @@ An example of colours and fonts (delete or replace)
 
 ### Fonts
 <https://fonts.google.com/?selection.family=DM+Serif+Display|Open+Sans:400,400i,700,700i>
+<'https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap'>;
 
 1. DM Serif Display
 ![DM Serif Display](https://1.bp.blogspot.com/-nZ2OWev4New/XRNWigeY6VI/AAAAAAAAApw/nfJLbqwMt1AXHefor-w61JFCGesoTXPQgCLcBGAs/s1600/DM%2BSerif%2BDisplay.png)
@@ -38,5 +39,14 @@ An example of colours and fonts (delete or replace)
 ## Wireframes & Annotation/Notes
 Images and notes go here
 
-![Git Branching and Merging](git-branching-and-merging.png "Git Branching and Merging")
+![Git Branching and Merging](planning\design\dashboard-home-page.png "Git Branching and Merging")
+Delete or replace this example image.
+
+![Git Branching and Merging](planning\design\dashboard-create-new-file-page.png "Git Branching and Merging")
+Delete or replace this example image.
+
+![Git Branching and Merging](planning\design\dashboard-open-folder-page.png "Git Branching and Merging")
+Delete or replace this example image.
+
+![Git Branching and Merging](planning\design\dashboard-research-result-page.png"Git Branching and Merging")
 Delete or replace this example image.
