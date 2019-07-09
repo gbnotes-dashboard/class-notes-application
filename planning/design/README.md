@@ -39,14 +39,12 @@ An example of colours and fonts (delete or replace)
 ## Wireframes & Annotation/Notes
 Images and notes go here
 
-![Git Branching and Merging](planning\design\dashboard-home-page.png "Git Branching and Merging")
-Delete or replace this example image.
+![Git Branching and Merging](dashboard-home-page.png "Git Branching and Merging")
 
-![Git Branching and Merging](planning\design\dashboard-create-new-file-page.png "Git Branching and Merging")
-Delete or replace this example image.
 
-![Git Branching and Merging](planning\design\dashboard-open-folder-page.png "Git Branching and Merging")
-Delete or replace this example image.
+![Git Branching and Merging](dashboard-create-new-file-page.png "Git Branching and Merging")
 
-![Git Branching and Merging](planning\design\dashboard-research-result-page.png"Git Branching and Merging")
-Delete or replace this example image.
+![Git Branching and Merging](dashboard-open-folder-page.png "Git Branching and Merging")
+
+
+![Git Branching and Merging](dashboard-research-result-page.png"Git Branching and Merging")
