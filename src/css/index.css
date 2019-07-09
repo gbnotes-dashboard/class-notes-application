@@ -35,6 +35,35 @@ footer {
   width: 2em;
   height: 2em;
 }
+/*pop up box for creating a new file*/
+.box{
+  position: relative;
+
+}
+
+.create-box{
+  display: grid;
+  grid-template-columns: repeat(3.2fr);
+  grid-row-gap: 2em;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: 100;
+  background-color: rgba(201, 204, 204, 0.9);
+  padding: 5em;
+  border-radius: 5%;
+}
+.grid-middle{
+  grid-column: 1/2;
+}
+
+.close-btn{
+  justify-self: flex-end;
+}
+.input-bar{
+  width: 100%;
+}
 
 /* topics */
 .my-topics {
@@ -45,7 +74,7 @@ footer {
 }
 
 .topic-icon {
-  position: relative;
+  position: relative; 
   width: 10em;
   height: 10em;
 }
@@ -54,15 +83,18 @@ footer {
   width: 100%;
   height: 100%;
 }
-
-.tag-color {
+.pos-absolute{
   position: absolute;
   bottom: 1em;
   left: 1em;
+}
+.tag-color {
   width: 2em;
   height: 2em;
   border-radius: 50%;
 }
+
+
 
 .fav-btn {
   position: absolute;
@@ -82,6 +114,12 @@ footer {
 
 .bg-green {
   background: green;
+}
+
+.color-options{
+  display: grid;
+  grid-template-columns: repeat(3,0.7fr);
+  grid-column-gap: 0.5em;
 }
 
 /* navigation topbar*/
@@ -183,6 +221,10 @@ h3 {
   .my-topics {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  /* .create-box{
+    padding-left: 10em;
+    padding-right: 10em;
+  }  */
 }
 
 
@@ -194,5 +236,9 @@ h3 {
  .expand-icon {
    display: none;
  } 
+ /* .create-box{
+  padding-left: 30em;
+  padding-right: 30em;
+}  */
 
 }

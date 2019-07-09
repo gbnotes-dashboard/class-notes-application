@@ -20,7 +20,8 @@
         <button class="icon" id="add-note-btn" type="button" name="add-note-btn">
           <img src="img/add-note-icon.svg" alt="Add note button">
         </button>
-     
+
+
         <button class="icon" id="see-fav-btn" type="button" name="see-fav-btn">
           <img src="img/fav-icon.svg" alt="See favourites button">
         </button>
@@ -51,7 +52,35 @@
       </nav>
     </header> 
 
+  
+  
+
     <main>
+      <section class="box">
+        <div class="create-box" >
+          <button class="icon close-btn">
+            <img src="img\close-btn.png" alt="close-btn">
+          </button>
+         
+          <div class="grid-middle">
+              <h3>File Name</h3>
+              <div><input type="text" class="input-bar"></div>
+          </div>
+          <div>
+              <h3>Tag Name</h3>
+              <ul class="color-options">
+                <li class="tag-color bg-red"></li>
+                <li class="tag-color bg-green"></li>
+                <li class="tag-color bg-blue"></li>
+              </ul>
+              <div><input type="text" class="input-bar"></div>
+          </div>
+
+        </div>
+        </section>  
+
+ 
+
       <section class="collections-section">
         <h2>My Collections</h2>
         <ul class="my-collections" id="my-collections">
@@ -74,7 +103,7 @@
                   <button class="icon fav-btn" type="button" name="fav-btn">
                     <img src="img/add-to-fav-icon.svg" alt="Add to favourites button">
                   </button>
-                  <div class="tag-color bg-red"></div>
+                  <div class="tag-color pos-absolute bg-red"></div>
                 </div>
                 <h3>#HTML</h3>
               </li>
@@ -89,7 +118,7 @@
                   <button class="icon fav-btn" type="button" name="fav-btn">
                     <img src="img/add-to-fav-icon.svg" alt="Add to favourites button">
                   </button>
-                  <div class="tag-color bg-blue"></div>
+                  <div class="tag-color pos-absolute bg-blue"></div>
                 </div>
                 <h3>#CSS</h3>
               </li>
@@ -104,7 +133,7 @@
                   <button class="icon fav-btn" type="button" name="fav-btn">
                     <img src="img/faved-icon.svg" alt="Remove from favourites button">
                   </button>
-                  <div class="tag-color"></div>
+                  <div class="tag-color pos-absolute"></div>
                 </div>
                 <h3>#Javascript</h3>
               </li>
@@ -126,7 +155,7 @@
               <button class="icon fav-btn" type="button" name="fav-btn">
                 <img src="img/faved-icon.svg" alt="Remove from favourites button">
               </button>
-              <div class="tag-color bg-red"></div>
+              <div class="tag-color pos-absolute bg-red"></div>
             </div>
             <h3>#HTML</h3>
           </li>
@@ -141,7 +170,7 @@
               <button class="icon fav-btn" type="button" name="fav-btn">
                 <img src="img/add-to-fav-icon.svg" alt="Add to favourites button">
               </button>
-              <div class="tag-color bg-blue"></div>
+              <div class="tag-color pos-absolute bg-blue"></div>
             </div>
             <h3>#CSS</h3>
           </li>
@@ -156,7 +185,7 @@
               <button class="icon fav-btn" type="button" name="fav-btn">
                 <img src="img/faved-icon.svg" alt="Remove from favourites button">
               </button>
-              <div class="tag-color bg-green"></div>
+              <div class="tag-color pos-absolute bg-green"></div>
             </div>
             <h3>#Persona</h3>
           </li>
@@ -171,7 +200,7 @@
               <button class="icon fav-btn" type="button" name="fav-btn">
                 <img src="img/faved-icon.svg" alt="Remove from favourites button">
               </button>
-              <div class="tag-color"></div>
+              <div class="tag-color pos-absolute"></div>
             </div>
             <h3>#Cognition</h3>
           </li>
@@ -188,7 +217,7 @@
                   <img src="img/folder-icon-color.svg" alt="Topic folder">
                 </a>
               </div>
-              <div class="tag-color"></div>
+              <div class="tag-color pos-absolute"></div>
             </div>
             <h3>Text</h3>
           </li>
@@ -200,7 +229,7 @@
                   <img src="img/folder-icon-color.svg" alt="Topic folder">
                 </a>
               </div>
-              <div class="tag-color"></div>
+              <div class="tag-color pos-absolute"></div>
             </div>
             <h3>Images</h3>
           </li>
