@@ -20,19 +20,16 @@ An example of colours and fonts (delete or replace)
 
 ### Fonts
 <https://fonts.google.com/?selection.family=DM+Serif+Display|Open+Sans:400,400i,700,700i>
-<'https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap'>;
+<https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro>;
 
 1. DM Serif Display
-![DM Serif Display](https://1.bp.blogspot.com/-nZ2OWev4New/XRNWigeY6VI/AAAAAAAAApw/nfJLbqwMt1AXHefor-w61JFCGesoTXPQgCLcBGAs/s1600/DM%2BSerif%2BDisplay.png)
+![Sans+Pro Display](fonts-display.png "Git Branching and Merging")
    - Used for:
      - Headings
      - Accent text
-
-1. Open Sans
-![DM Serif Display](https://speckyboy.com/wp-content/uploads/2018/02/popular-google-fonts-01.png)
-   - Used for:
-     - Default text (paragraphs, lists, etc)
+          - Default text (paragraphs, lists, etc)
      - Form elements
+
 
 ----
 
