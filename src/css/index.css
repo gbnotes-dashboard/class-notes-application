@@ -38,12 +38,12 @@ footer {
 /*pop up box for creating a new file*/
 .box{
   position: relative;
+  display: none;
 
 }
 
 .create-box{
   display: grid;
-  grid-template-columns: repeat(3.2fr);
   grid-row-gap: 2em;
   position: fixed;
   top:50%;
@@ -51,7 +51,10 @@ footer {
   transform: translate(-50%,-50%);
   z-index: 100;
   background-color: rgba(201, 204, 204, 0.9);
-  padding: 5em;
+    padding-left: 2em;
+  padding-right: 2em; 
+  padding-top: 2em;
+  padding-bottom: 3em; 
   border-radius: 5%;
 }
 .grid-middle{
@@ -59,7 +62,7 @@ footer {
 }
 
 .close-btn{
-  justify-self: flex-end;
+  justify-self: flex-end; 
 }
 .input-bar{
   width: 100%;
@@ -118,7 +121,7 @@ footer {
 
 .color-options{
   display: grid;
-  grid-template-columns: repeat(3,0.7fr);
+  grid-template-columns: repeat(4,2fr);
   grid-column-gap: 0.5em;
 }
 
@@ -224,7 +227,7 @@ h3 {
   /* .create-box{
     padding-left: 10em;
     padding-right: 10em;
-  }  */
+  }   */
 }
 
 
@@ -236,9 +239,9 @@ h3 {
  .expand-icon {
    display: none;
  } 
- /* .create-box{
-  padding-left: 30em;
-  padding-right: 30em;
-}  */
+.create-box{
+  padding-left: 6em;
+  padding-right: 6em;
+}
 
 }
