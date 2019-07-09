@@ -12,11 +12,11 @@ An example of colours and fonts (delete or replace)
 
 ### Colours
 <https://coolors.co/0c0a0a-3f434e-dddadf-68a01b-3a721e>
-- ![#0C0A0A](https://placehold.it/15/0C0A0A/000000?text=+) `#0C0A0A`
-- ![#3F434E](https://placehold.it/15/3F434E/000000?text=+) `#3F434E`
+- ![#ADD8E6](https://placehold.it/15/ADD8E6/000000?text=+) `#ADD8E6`
+- ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) `#FFFFFF`
 - ![#DDDADF](https://placehold.it/15/DDDADF/000000?text=+) `#DDDADF`
-- ![#68A01B](https://placehold.it/15/68A01B/000000?text=+) `#68A01B`
-- ![#3A721E](https://placehold.it/15/3A721E/000000?text=+) `#3A721E`
+- ![#0C0A0A](https://placehold.it/15/68A01B/000000?text=+) `#0C0A0A`
+
 
 ### Fonts
 <https://fonts.google.com/?selection.family=DM+Serif+Display|Open+Sans:400,400i,700,700i>
