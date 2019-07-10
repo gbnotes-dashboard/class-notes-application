@@ -7,10 +7,11 @@
 }
 .title-items{
 display: grid;
-grid-template-columns:0.5fr,0.5fr,0.5fr,0.5fr,5fr,1fr;
+grid-template-columns:0.5fr,0.4fr,0.2fr,0.5fr,5fr,1fr;
 margin-top:2em;
 margin-bottom: 2em;
 align-items: baseline;
+justify-items:left;
 }
 .change-text-font{
   font-size: 1em;
@@ -79,6 +80,13 @@ align-items: baseline;
 } 
   /* responsive css */
   @media screen and (min-width:730px) {
+    /* .title-items{
+      display: grid;
+      grid-template-columns:0.5fr,0.2fr,0.2fr,0.5fr,5fr,1fr;
+
+      margin-bottom: 3em;
+
+      } */
     .change-text-font{
       font-size: 1.5em;
       }
