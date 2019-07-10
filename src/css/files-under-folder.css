@@ -1,18 +1,23 @@
 /* style for sub-heading */
+
 .content{
-  margin-left: 1em;
+  margin-left: 2em;
   margin-right:1em;
   margin-bottom:2em;
 }
 .title-items{
 display: grid;
-grid-template-columns:0.5fr,5fr,1fr;
+grid-template-columns:0.5fr,0.5fr,0.5fr,0.5fr,5fr,1fr;
 margin-top:2em;
 margin-bottom: 2em;
+align-items: baseline;
 }
+.change-text-font{
+  font-size: 1em;
+  }
 
 .grid-end{
-  grid-column: 3/4;
+  grid-column: 6/7;
   justify-self: flex-end;
   align-self: flex-end;
 
@@ -74,6 +79,10 @@ margin-bottom: 2em;
 } 
   /* responsive css */
   @media screen and (min-width:730px) {
+    .change-text-font{
+      font-size: 1.5em;
+      }
+      
     .file{
       display: grid;
       grid-template-columns: repeat(7,1fr);
