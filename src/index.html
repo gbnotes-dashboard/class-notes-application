@@ -2,17 +2,241 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Hashtag Notes</title>
+    <meta name="A tool for organizing class notes" content="">
+    <meta name="Gabriela Kostova, Cui Ting Zhou, Damian Spaziani" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+    </style>
   </head>
+
   <body>
+    <header>
+      <nav>
+        <button class="icon" id="add-note-btn" type="button" name="add-note-btn">
+          <img src="img/add-note-icon.svg" alt="Add note button">
+        </button>
 
 
+        <button class="icon" id="see-fav-btn" type="button" name="see-fav-btn">
+          <img src="img/fav-icon.svg" alt="See favourites button">
+        </button>
+
+        <h1>
+          <a href="#">Hashtag Notes</a>
+        </h1>
+
+        <div class="icon" id="view-profile-btn">
+          <a href="#">
+            <img src="img/profile-icon.svg" alt="View profile button">
+           </a>
+        </div>
+       
+        <form class="search-form" id="search-form">
+          <button class="icon" id="search-btn-menu" type="button" name="search-btn-menu">
+            <img src="img/search-icon.svg" alt="Open search">
+          </button>
+
+          <div class="searcharea">
+            <input type="search" id="search-field" name="query" placeholder="type hashtag">
+          </div>
+
+          <button class="icon" id="search-btn-query" type="button" name="search-btn">
+            <img src="img/search-icon.svg" alt="Search">
+          </button>
+        </form>
+      </nav>
+    </header> 
+
+  
+  
+
+    <main>
+      <section class="box">
+        <div class="create-box" >
+          <button class="icon close-btn">
+              <img src="img\close-btn.png" alt="close-btn">
+          </button>
+          <h3>File Name</h3>
+          <div><input type="text" class="input-bar"></div>
+          <h3>Tag Name</h3>
+          <ul class="color-options">
+              <h3>Tag Name</h3>
+            <li class="tag-color bg-red"></li>
+            <li class="tag-color bg-green"></li>
+            <li class="tag-color bg-blue"></li>
+          </ul>
+          <div><input type="text" class="input-bar"></div>
+      </div>
+    </section>  
+        
+
+      <section class="collections-section">
+        <h2>My Collections</h2>
+        <ul class="my-collections" id="my-collections">
+          <li class="collection">
+            <div class="title-tab">
+              <button class="expand-btn" type="button" name="expand-btn">
+                <span class="tab-title">Javascript Website</span>
+                  <img class="expand-icon icon" src="img/expand-icon.svg" alt="Expand section icon">
+              </button>
+            </div>
+      
+            <ul class="my-topics">
+              <li class="topic">
+                <div class="topic-icon">
+                  <div class="image-link">
+                    <a href="#" class="image-link">
+                      <img src="img/folder-icon-color.svg" alt="Topic folder">
+                    </a>
+                  </div>
+                  <button class="icon fav-btn" type="button" name="fav-btn">
+                    <img src="img/add-to-fav-icon.svg" alt="Add to favourites button">
+                  </button>
+                  <div class="tag-color pos-absolute bg-red"></div>
+                </div>
+                <h3>#HTML</h3>
+              </li>
+      
+              <li class="topic">
+                <div class="topic-icon">
+                  <div class="image-link">
+                    <a href="#" class="image-link">
+                      <img src="img/folder-icon-color.svg" alt="Topic folder">
+                    </a>
+                  </div>
+                  <button class="icon fav-btn" type="button" name="fav-btn">
+                    <img src="img/add-to-fav-icon.svg" alt="Add to favourites button">
+                  </button>
+                  <div class="tag-color pos-absolute bg-blue"></div>
+                </div>
+                <h3>#CSS</h3>
+              </li>
+      
+              <li class="topic">
+                <div class="topic-icon">
+                  <div class="image-link">
+                    <a href="#" class="image-link">
+                      <img src="img/folder-icon-color.svg" alt="Topic folder">
+                    </a>
+                  </div>
+                  <button class="icon fav-btn" type="button" name="fav-btn">
+                    <img src="img/faved-icon.svg" alt="Remove from favourites button">
+                  </button>
+                  <div class="tag-color pos-absolute"></div>
+                </div>
+                <h3>#Javascript</h3>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <section class="my-topics-section">
+        <h2> My Topics </h2>
+        <ul class="my-topics">
+          <li class="topic">
+            <div class="topic-icon">
+              <div class="image-link">
+                <a href="#" class="image-link">
+                  <img src="img/folder-icon-color.svg" alt="Topic folder">
+                </a>
+              </div>
+              <button class="icon fav-btn" type="button" name="fav-btn">
+                <img src="img/faved-icon.svg" alt="Remove from favourites button">
+              </button>
+              <div class="tag-color pos-absolute bg-red"></div>
+            </div>
+            <h3>#HTML</h3>
+          </li>
+
+          <li class="topic">
+            <div class="topic-icon">
+              <div class="image-link">
+                <a href="#" class="image-link">
+                  <img src="img/folder-icon-color.svg" alt="Topic folder">
+                </a>
+              </div>
+              <button class="icon fav-btn" type="button" name="fav-btn">
+                <img src="img/add-to-fav-icon.svg" alt="Add to favourites button">
+              </button>
+              <div class="tag-color pos-absolute bg-blue"></div>
+            </div>
+            <h3>#CSS</h3>
+          </li>
+
+          <li class="topic">
+            <div class="topic-icon">
+              <div class="image-link">
+                <a href="#" class="image-link">
+                  <img src="img/folder-icon-color.svg" alt="Topic folder">
+                </a>
+              </div>
+              <button class="icon fav-btn" type="button" name="fav-btn">
+                <img src="img/faved-icon.svg" alt="Remove from favourites button">
+              </button>
+              <div class="tag-color pos-absolute bg-green"></div>
+            </div>
+            <h3>#Persona</h3>
+          </li>
+
+          <li class="topic">
+            <div class="topic-icon">
+              <div class="image-link">
+                <a href="#" class="image-link">
+                  <img src="img/folder-icon-color.svg" alt="Topic folder">
+                </a>
+              </div>
+              <button class="icon fav-btn" type="button" name="fav-btn">
+                <img src="img/faved-icon.svg" alt="Remove from favourites button">
+              </button>
+              <div class="tag-color pos-absolute"></div>
+            </div>
+            <h3>#Cognition</h3>
+          </li>
+        </ul>
+      </section>
+      
+      <section class="untagged-section">
+        <h2>Untagged files</h2>
+        <ul class="my-topics">
+          <li class="topic">
+            <div class="topic-icon">
+              <div class="image-link">
+                <a href="#" class="image-link">
+                  <img src="img/folder-icon-color.svg" alt="Topic folder">
+                </a>
+              </div>
+              <div class="tag-color pos-absolute"></div>
+            </div>
+            <h3>Text</h3>
+          </li>
+  
+          <li class="topic">
+            <div class="topic-icon">
+              <div class="image-link">
+                <a href="#" class="image-link">
+                  <img src="img/folder-icon-color.svg" alt="Topic folder">
+                </a>
+              </div>
+              <div class="tag-color pos-absolute"></div>
+            </div>
+            <h3>Images</h3>
+          </li>
+        </ul>
+      </section>
+    </main>
+    
+    <footer>
+      <div class="copyright">
+        &copy; 2019 Hashtag Notes
+      </div>
+    </footer>
+      
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
   </body>
