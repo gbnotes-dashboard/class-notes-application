@@ -101,8 +101,6 @@ footer {
   border-radius: 50%;
 }
 
-
-
 .fav-btn {
   position: absolute;
   right: 0;
@@ -137,7 +135,7 @@ nav {
   grid-gap: 2em;
   align-items: center;
   justify-items: center;
-  background: black;
+  background: #4169E1;
 }
 
 .view-profile-btn {
