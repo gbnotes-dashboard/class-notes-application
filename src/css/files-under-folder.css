@@ -1,0 +1,67 @@
+/* style for sub-heading */
+.content{
+  margin-left: 1em;
+  margin-right:1em;
+  margin-bottom:2em;
+}
+.title-items{
+display: grid;
+grid-template-columns:0.5fr,5fr,1fr;
+margin-top:2em;
+margin-bottom: 2em;
+}
+
+.grid-end{
+  grid-column: 3/4;
+  justify-self: flex-end;
+  align-self: flex-end;
+
+}
+.btn-combine{
+  background-color: black;
+  color: white;
+  border-radius: 5%;
+  padding:0.5em;
+}
+
+/* style for content */
+.file-in-section{
+  display: grid;
+  grid-gap: 3em;
+}
+.drop-down-info{
+  border:solid;
+  border-width: 0.02em;
+  padding: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display:none;
+}
+.icon-file{
+  width:6em;
+}
+.icon-small{
+  width: 1.5em;
+}
+.check-box{
+  width:2em;
+}
+
+.file{
+  display: grid;
+  grid-template-columns: 1fr,1fr,0.5fr,1fr,1fr,1fr,1fr;
+
+}
+
+.file-img{
+  grid-column: 2/4;
+}
+.file-info{
+  grid-column: 4/6;
+}
+.edit-icon{
+  grid-column: 6/7;
+}
+.drop-down-icon{
+  grid-column:7/8;
+}
