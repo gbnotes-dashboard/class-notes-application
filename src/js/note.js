@@ -13,7 +13,7 @@ const note = [
     note_id: 2,
     user_id: 1,
     title: 'Interface dev 1 class notes', 
-    content: 'Usually, the javascript file is called script.js and placed in a folder called js.'\n'Apply javascript as a <script src> and put as the last thing in the body to ensure the browser reads all the content before executing the javascript code e.g., <script src="myscripts.js"></script>.\nIf we have multiple js files attached, just attach them in chronological order in the html; e.g., data file first and then function file.\n',
+    content: 'Usually, the javascript file is called script.js and placed in a folder called js.\nApply javascript as a <script src> and put as the last thing in the body to ensure the browser reads all the content before executing the javascript code e.g., <script src="myscripts.js"></script>.\nIf we have multiple js files attached, just attach them in chronological order in the html; e.g., data file first and then function file.\n',
     dateCreated: `05/15/2019`,
     dateModified: `06/13/2019`,
     tag_id: [1, 4, 5],
