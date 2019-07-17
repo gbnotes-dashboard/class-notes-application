@@ -1,23 +1,23 @@
 const users=[
 {
  user_id:`1`, 
- userFirstName:`Gabby`,
- userLastNmae:`Kostova`,
- userEmail:`kostovagm@gmail.com`,
- userPassword:`123456`
+ firstName:`Gabby`,
+ lastNmae:`Kostova`,
+ email:`kostovagm@gmail.com`,
+ password:`123456`
 },
 {
  user_id:`2`, 
- userFirstName:`Leah`,
- userLastNmae:`Chow`,
- userEmail:`ctzhouleya@gmail.com`,
- userPassword:`890719`
+ firstName:`Leah`,
+ lastNmae:`Chow`,
+ email:`ctzhouleya@gmail.com`,
+ password:`890719`
 },
 {
  user_id:`3`, 
- userFirstName:`Damian`,
- userLastNmae:`Spaziani`,
- userEmail:`damian.spaziani22@gmail.com`,
- userPassword:`HelloWorld`
+ firstName:`Damian`,
+ lastNmae:`Spaziani`,
+ email:`damian.spaziani22@gmail.com`,
+ password:`HelloWorld`
 },
 ]
