@@ -6,9 +6,9 @@ const getCollectionsAndNotes = {
       collection_id: 1, 
       name: ‘Intro Web’, 
       tags: [
-        {tag_id: 1, name: ‘javascript’, favourite: true, color: red;}
-        {tag_id: 6, name: ‘html’, favourite: true;}
-        {tag_id: 7, name: ‘css’, favourite: true;}
+        {tag_id: 1, name: ‘javascript’, favourite: true, color: #FF0000}
+        {tag_id: 6, name: ‘html’, favourite: true}
+        {tag_id: 7, name: ‘css’, favourite: true}
       ]
       };
 
@@ -20,9 +20,9 @@ const getCollectionsAndNotes = {
         dateCreated: `04/02/2019`,
         dateModified: `05/02/2019`,
         tags: [
-          {tag_id: 1, name: ‘javascript’, favourite: true, color: red;}
-          {tag_id: 6, name: ‘html’, favourite: true;}
-          {tag_id: 7, name: ‘css’, favourite: true;}
+          {tag_id: 1, name: 'JavaScript', favourite: true, color: #FF0000},
+          {tag_id: 2, name: 'Workshop', favourite: false}, 
+          {tag_id: 3, name: 'Conference', favourite: false, color: #F4D03F}, 
         ]
       },
 
@@ -34,8 +34,8 @@ const getCollectionsAndNotes = {
         dateModified: `06/13/2019`,
         tags: [
           {tag_id: 1, name: ‘javascript’, favourite: true, color: red;}
-          {tag_id: 6, name: ‘html’, favourite: true;}
-          {tag_id: 7, name: ‘css’, favourite: true;}
+          {tag_id: 4, name: 'gbc', favourite: false},
+          {tag_id: 5, name: 'Semester 2', favourite: false, color: blue}, 
         ]
       },
 
@@ -47,8 +47,10 @@ const getCollectionsAndNotes = {
         dateModified: `03/21/2019`,
         tags: [
           {tag_id: 1, name: ‘javascript’, favourite: true, color: red;}
-          {tag_id: 6, name: ‘html’, favourite: true;}
-          {tag_id: 7, name: ‘css’, favourite: true;}
+          {tag_id: 4, name: 'gbc', favourite: false},
+          {tag_id: 5, name: 'Semester 2', favourite: false, color: blue}, 
+          {tag_id: 6, name: ‘html’, favourite: true}
+          {tag_id: 7, name: ‘css’, favourite: true}
         ]
       },
 
@@ -59,9 +61,6 @@ const getCollectionsAndNotes = {
         dateCreated: `01/12/2018`,
         dateModified: `01/12/2019`,
         tags: [
-          {tag_id: 1, name: ‘javascript’, favourite: true, color: red;}
-          {tag_id: 6, name: ‘html’, favourite: true;}
-          {tag_id: 7, name: ‘css’, favourite: true;}
         ]
       },
     ]
