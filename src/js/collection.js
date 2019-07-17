@@ -1,5 +1,5 @@
 const collection = [
-  { collectionID: 1, name: 'Javascript Website', tags: [1, 6, 7] },
-  { collectionID: 2, name: 'Draw a Game Controller', tags: [8, 9] },
-  { collectionID: 3, name: 'Funeral Services', tags: [12, 13] },
+  { collection_id: 1, name: 'Javascript Website', tag_id: [1, 6, 7] },
+  { collection_id: 2, name: 'Draw a Game Controller', tag_id: [8, 9] },
+  { collection_id: 3, name: 'Funeral Services', tag_id: [12, 13] },
 ]
