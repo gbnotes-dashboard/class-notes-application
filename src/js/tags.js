@@ -1,13 +1,24 @@
 const tags = [
-  {userFirstName: 'Gabby', userLastName: 'Kostova', userEmail: 'kostovagm@gmail.com', userTags: [{tagName: 'JavaScript', favourite: true, color: `#FF0000`}, {tagName: 'Workshop', favourite: false}, {tagName: 'Conference', favourite: false, color: `#F4D03F`}, {tagName: 'gbc', favourite: false},{tagName: 'Semester 2', favourite: false, color: `#3498DB`}, {tagName: 'html', favourite: true}, {tagName: 'css', favourite: true}
+  {user_id: 1, tag_id: [
+    { tagID: 1, name: 'JavaScript', favourite: true, color: `#FF0000`},
+    {tagID: 2, name: 'Workshop', favourite: false}, 
+    {tagID: 3,name: 'Conference', favourite: false, color: `#F4D03F`}, 
+    {tagID: 4,name: 'gbc', favourite: false},
+    { tagID: 5,name: 'Semester 2', favourite: false, color: `#3498DB`}, 
+    {tagID: 6, name: 'html', favourite: true}, 
+    {tagID: 7,name: 'css', favourite: true} 
 ] }, 
 
-  {userFirstName: 'Leah', userLastName: 'Chow', userEmail: 'ctzhouleya@gmail.com', userTags: [{tagName: 'Photoshop', favourite: false}, {tagName: 'Javascript', favourite: false}, {tagName: 'School Information', favourite: true, color: `#FF0000`}, {tagName: 'Illustrator', favourite: false}
+  {user_id: 2, tag_id: [
+    {tagID: 8, name: 'Photoshop', favourite: false}, 
+    {tagID: 9,name: 'Javascript', favourite: false}, 
+    {tagID: 10, name: 'School Information', favourite: true, color: `#FF0000`}, 
+    {tagID: 11, name: 'Illustrator', favourite: false}
 ] }, 
 
-  {userFirstName: 'Damian', userLastName: 'Spaziani', userEmail: 'damian.spaziani22@gmail.com', userTags: [{tagName: 'Theory Embalming', favourite: false, color: `#28B463`}, {tagName: 'Embalming Practical', favourite: false}, {tagName: 'Illustrator', favourite: true}
-] } ]
-
-const collection = [
-  {}
+  {user_id: 3, tag_id: [
+    {tagID: 12, name: 'Theory Embalming', favourite: false, color: `#28B463`}, 
+    {tagID: 13, name: 'Embalming Practical', favourite: false}, 
+    {tagID: 14, name: 'Illustrator', favourite: true}
+] } 
 ]
