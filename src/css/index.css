@@ -127,6 +127,11 @@ footer {
   background: green;
 }
 
+.yellow {
+  background: yellow;
+}
+
+
 .color-options{
   display: grid;
   grid-template-columns: repeat(4,2fr);

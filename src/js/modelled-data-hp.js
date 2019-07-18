@@ -8,21 +8,21 @@ const getCollectionsAndTags = {
         collection_id: 1, 
         name: `Javascript Website`, 
         tags: [
-          {tag_id: 1, name: `#Javascript`, favourite: true, color: `red`},
-          {tag_id: 6, name: `#Html`, favourite: true},
-          {tag_id: 7, name: `#Css`, favourite: true}
+          {tag_id: 1, name: `Javascript`, favourite: true, color: `red`},
+          {tag_id: 6, name: `HTML`, favourite: true},
+          {tag_id: 7, name: `CSS`, favourite: true}
         ]
       }
     ],
     
     tags: [
-      {tag_id: 1, name: '#Javascript', favourite: true, color: `red`},
-      {tag_id: 2, name: '#Workshop', favourite: false}, 
-      {tag_id: 3, name: '#Conference', favourite: false, color: `yellow`}, 
-      {tag_id: 4, name: '#Gbc', favourite: false},
-      {tag_id: 5, name: '#Semester2', favourite: false, color: `blue`}, 
-      {tag_id: 6, name: `#Html`, favourite: true},
-      {tag_id: 7, name: `#Css`, favourite: true}
+      {tag_id: 1, name: 'Javascript', favourite: true, color: `red`},
+      {tag_id: 2, name: 'Workshop', favourite: false}, 
+      {tag_id: 3, name: 'Conference', favourite: false, color: `yellow`}, 
+      {tag_id: 4, name: 'Gbc', favourite: false},
+      {tag_id: 5, name: 'Semester2', favourite: false, color: `blue`}, 
+      {tag_id: 6, name: `HTML`, favourite: true},
+      {tag_id: 7, name: `CSS`, favourite: true}
     ]
 };
 

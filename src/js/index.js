@@ -8,11 +8,11 @@ $greeting.innerHTML = `Hello, ${getCollectionsAndTags.firstName}!`;
 
 const getTagAsHtml = ( t ) => {
 
-	let star = ``;
-  if(t.favorite) {
-    star =`<img src="img/add-to-fav-icon.svg" alt="Add to favourites button">`
+  let star = ``;
+  if(t.favourite) {
+    star =`<img src="img/faved-icon.svg" alt="Remove from favourites button">`
   } else {
-    star = `<img src="img/faved-icon.svg" alt="Remove from favourites button">`
+    star = `<img src="img/add-to-fav-icon.svg" alt="Add to favourites button">`
   }
 
   return `
@@ -28,7 +28,7 @@ const getTagAsHtml = ( t ) => {
         </button>
         <div class="tag-color pos-absolute ${t.color}"></div>
       </div>
-      <h3>${t.name}</h3>
+      <h3>#${t.name}</h3>
     </li>
 `
 };
@@ -36,7 +36,7 @@ const getTagAsHtml = ( t ) => {
 $mycollections.innerHTML = getCollectionsAndTags.collections.map (col => 
 	`<div class="title-tab">
     <button class="expand-btn" type="button" name="expand-btn">
-      <span class="tab-title">J${col.name}</span>
+      <span class="tab-title">${col.name}</span>
         <img class="expand-icon icon" src="img/expand-icon.svg" alt="Expand section icon">
     </button>
   </div>
@@ -46,8 +46,8 @@ $mycollections.innerHTML = getCollectionsAndTags.collections.map (col =>
 ).join(``);
 
 
-// getCollectionsAndTags.tags.forEach(tag) 
-//   {$mytopics.innerHTML += getTagAsHtml (tag)};
+getCollectionsAndTags.tags.forEach((tag) => 
+  {
+    $mytopics.innerHTML += getTagAsHtml (tag)
+  });
 
-// $mytopics.innerHTML = getCollectionsAndTags.tags.map (tag => 
-//   getTagAsHtml);
