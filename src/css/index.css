@@ -39,6 +39,12 @@ footer {
   width: 2em;
   height: 2em;
 }
+
+.greeting {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 /*pop up box for creating a new file*/
 .box{
   position: relative;
@@ -109,17 +115,22 @@ footer {
 
 /* colors */
 
-.bg-red {
+.red {
   background: red;
 }
 
-.bg-blue {
+.blue {
   background:blue;
 }
 
-.bg-green {
+.green {
   background: green;
 }
+
+.yellow {
+  background: yellow;
+}
+
 
 .color-options{
   display: grid;
