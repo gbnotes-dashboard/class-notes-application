@@ -126,7 +126,7 @@ const fileInformation ={
 
             </div>
             <div><img src="img/edit.png" alt="edit-icon" class="icon-small"></div>
-             <div id="dp-btn-${note.note_id}"><button class="drop-down-btn" data-note="${note.note_id}"><img src="img/triangle.png" alt="triangle-drop-down-icon" class="icon-small ${dropDownBtn}"></button ></div>
+             <div id="dp-btn-${note.note_id}"><button class="drop-down-btn" data-note="${note.note_id}"><img src="img/triangle.png" alt="triangle-drop-down-icon" class="icon-small ${dropDownBtn}" data-type="drop"></button ></div>
       <div class="drop-down-info hide-icon" id="dd-${note.note_id}">${dropDown}</div>
     </li>`
 
@@ -143,12 +143,16 @@ const printFilesToHtml =(a)=>{
   $file.innerHTML=``;
   $file.innerHTML=a.map(oneStringToHtml).join(``);
 
-  document.querySelectorAll('.drop-down-btn').forEach(btn => {
-    btn.addEventListener(`click`, event => {
-      const id = btn.dataset.note;
-      document.getElementById(`dd-${id}`).classList.toggle('hide-icon');
-    })
-  })
+  //one way to make button clickable in JS
+
+  // document.querySelectorAll('.drop-down-btn').forEach(btn => {
+  //   btn.addEventListener(`click`, event => {
+  //     const id = btn.dataset.note;
+  //     document.getElementById(`dd-${id}`).classList.toggle('hide-icon');
+  //   })
+  // })
+
+
 }
 
 
@@ -156,7 +160,7 @@ const printFilesToHtml =(a)=>{
 
 //printing tag files******************************************************************************************************
 
-const printTagFiles = (tagNum = -1)=>{
+const printTagFiles = (tagNum)=>{
   //printFilesToHtml(fileInformation.noteInfor.filter(arr=>arr.tags.some(subEl=>subEl.tag_id===1)))
 
   const matchingNotes = fileInformation.noteInfor.filter(note => {
@@ -173,6 +177,20 @@ printTagFiles(1);
 
 
 
+
 //Question and problem: how to addEventListener on button in JS
+document.getElementById(`file`).addEventListener(`click`, event => {
+
+  const btn = event.target;
+
+  // If what we clicked within the ul#file did not have a data-type="drop" assigned, then do not proceed
+  if (btn.dataset.type != "drop") return;
+
+  // Go up the DOM tree, find the .one-note parent, then go back down and toogle the dropdown
+  btn.closest(`.one-note`).querySelector(`.drop-down-info`).classList.toggle(`hide-icon`);
+
+});
+
+
 
 

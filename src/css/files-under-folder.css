@@ -54,7 +54,8 @@ align-items: baseline;
 }
 
 .check-box{
-  width:2em;
+  width:3em;
+  align-self: center;
 }
 
 
@@ -71,10 +72,25 @@ align-items: baseline;
 
   /* responsive css */
   @media screen and (min-width:730px) {
-    .change-text-font{
+    .file-info{
       font-size: 1.5em;
+    }
+    .change-text-font{
+      font-size: 2em;
       }
-      
+    .one-note{
+      grid-template-columns: 4em 10em auto 15em 8em;
+      margin-left: 10em;
+      margin-right:10em;
+    }
+    .icon-small{
+      width:2em;
+    }
+    .btn-combine{
+      padding-left:1em;
+      padding-right:1em;
+      font-size: 1.5em;
+    }
   }
 
     
