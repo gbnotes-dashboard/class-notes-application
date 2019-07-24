@@ -114,21 +114,21 @@ const fileInformation ={
    
  
 
-   return  `<li class ="check-box"><input type="checkbox" name="scales"><label for="scales"></label></li>
-            <li><img src="img/file.svg" alt="file-icon"  class="icon-file"></li>
-            <li class="file-info">
+   return  `
+    <li class="one-note">
+      <div class ="check-box"><input type="checkbox" name="scales"><label for="scales"></label></div>
+            <div><img src="img/file.svg" alt="file-icon"  class="icon-file"></div>
+            <div class="file-info">
               <div>Name: ${note.title}</div>
               <div>Date Created: ${note.dateCreated}</div>
               <div>Date Modified:${note.dateModified}</div>
               <div>${tag}${tagName}</div>
 
-            </li>
-            <li><img src="img/edit.png" alt="edit-icon" class="icon-small"></li>
-             <li id="dp-btn"><button ><img src="img/triangle.png" alt="triangle-drop-down-icon" class="icon-small ${dropDownBtn}"></button ></li>
-              <li class="drop-down-info hide-icon">
-               ${dropDown}
-              </li>`
-
+            </div>
+            <div><img src="img/edit.png" alt="edit-icon" class="icon-small"></div>
+             <div id="dp-btn-${note.note_id}"><button class="drop-down-btn" data-note="${note.note_id}"><img src="img/triangle.png" alt="triangle-drop-down-icon" class="icon-small ${dropDownBtn}"></button ></div>
+      <div class="drop-down-info hide-icon" id="dd-${note.note_id}">${dropDown}</div>
+    </li>`
 
  };
 
@@ -142,6 +142,13 @@ const printFilesToHtml =(a)=>{
   const $file = document.getElementById(`file`);
   $file.innerHTML=``;
   $file.innerHTML=a.map(oneStringToHtml).join(``);
+
+  document.querySelectorAll('.drop-down-btn').forEach(btn => {
+    btn.addEventListener(`click`, event => {
+      const id = btn.dataset.note;
+      document.getElementById(`dd-${id}`).classList.toggle('hide-icon');
+    })
+  })
 }
 
 
@@ -149,18 +156,23 @@ const printFilesToHtml =(a)=>{
 
 //printing tag files******************************************************************************************************
 
-const printTagFiles =()=>{
-  printFilesToHtml(fileInformation.noteInfor.filter(arr=>arr.tags.some(subEl=>subEl.tag_id===1)))
+const printTagFiles = (tagNum = -1)=>{
+  //printFilesToHtml(fileInformation.noteInfor.filter(arr=>arr.tags.some(subEl=>subEl.tag_id===1)))
+
+  const matchingNotes = fileInformation.noteInfor.filter(note => {
+    // Look for a certain tag, if not found, findIndex will return -1, so we compare the inverse of -1 and return that boolean
+    // Ex: If tag_id of 1 is found, findIndex will return the index >=0, so the function would return true because it does not equal to -1
+    return note.tags.findIndex(tag => tag.tag_id == tagNum) != -1;
+  });
+
+  printFilesToHtml(matchingNotes);
+
 }
 
-printTagFiles();
+printTagFiles(1);
 
 
 
 //Question and problem: how to addEventListener on button in JS
 
 
-// const showContent =()=>{
-//   document.getElementsByClassName(`drop-down-info`).classList.remove(`hide-icon`);
-//  }
-//   document.getElementById(`dp-btn`).addEventListener(`click`,showContent)

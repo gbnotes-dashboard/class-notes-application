@@ -52,15 +52,16 @@ align-items: baseline;
 .hide-icon{
   display:none;
 }
+
 .check-box{
   width:2em;
 }
 
 
-#file{
+.one-note{
   display: grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-row-gap: 5em;
+  grid-template-columns: 2em 4em auto 2em 2em;
+  margin: 5em 0;
 
 }
 .check-box{
