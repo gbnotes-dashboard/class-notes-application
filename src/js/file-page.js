@@ -72,6 +72,9 @@ const fileInformation ={
 ],
 };
 
+//when edit button on click, the edit box shown, and corresponded file name and tags name shoud be stored in the input
+//
+
 
 
 
