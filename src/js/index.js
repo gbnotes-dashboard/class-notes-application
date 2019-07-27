@@ -51,3 +51,22 @@ getCollectionsAndTags.tags.forEach((tag) =>
     $mytopics.innerHTML += getTagAsHtml (tag)
   });
 
+  /**************************************************************
+                Search by Tag Button
+****************************************************************/
+  const showMatchingTags = (query) => {
+    getTagAsHtml( tags.filter( prod => prod.name.toLowerCase().includes( query.toLowerCase() ) ) );
+
+    $mytopics.type.visibility =  `hidden`;
+  }
+
+    document.getElementById(`search-field`).addEventListener(`submit`, (event) => {
+    event.preventDefault();
+    let q = document.getElementById(`search`).query.value;
+     
+ 
+    
+    showMatchingTags(q);
+
+   
+});
