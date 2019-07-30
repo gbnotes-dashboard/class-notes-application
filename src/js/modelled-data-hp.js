@@ -7,11 +7,7 @@ const getCollectionsAndTags = {
       {
         collection_id: 1, 
         name: `Javascript Website`, 
-        tags: [
-          {tag_id: 1, name: `Javascript`, favourite: true, color: `red`},
-          {tag_id: 6, name: `HTML`, favourite: true},
-          {tag_id: 7, name: `CSS`, favourite: true}
-        ]
+        tag_ids: [1, 6, 7]
       }
     ],
     

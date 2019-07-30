@@ -9,6 +9,13 @@ button {
   border: none;
   background: transparent;
   text-align: left;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1em;
+  text-transform: uppercase;
 }
 
 a {
@@ -41,42 +48,64 @@ footer {
 }
 
 .greeting {
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 1.2em;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  margin-top: 1em;
+  color: gray;
 }
 
-/*pop up box for creating a new file*/
-.box{
-  position: relative;
-  display: none;
-
+/* layout */
+.collections-section, .favourites-section, .my-topics-section {
+  margin-bottom: 5em;
 }
 
-.create-box{
-  display: grid;
-  grid-row-gap: 2em;
-  position: fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+/*pop up box for creating a new note*/
+.popup-create-new-note{
+  position: absolute;
+  top: 0; left: 0; bottom:0; right: 0;
+  margin: auto;
   z-index: 100;
+  width: 50%;
+  height: 50em;
+  padding: 4em;
   background-color: rgba(201, 204, 204, 0.9);
-    padding-left: 2em;
-  padding-right: 2em; 
-  padding-top: 2em;
-  padding-bottom: 3em; 
-  border-radius: 5%;
-}
-.grid-middle{
-  grid-column: 1/2;
 }
 
-.close-btn{
-  justify-self: flex-end; 
+.popup-topbar {
+  text-align: right;
 }
-.input-bar{
+
+.input {
   width: 100%;
+  margin-bottom: 3em;
 }
+
+.input-bar-long {
+  height: 10em;
+}
+
+.input-bar-short {
+  height: 2em;
+}
+
+.color-options > li {
+  display: inline-block;
+  margin: 0 1em 0 0;
+}
+
+.color-options {
+  margin: 1em 0;
+}
+
+.create-file-btn {
+  background-color: black;
+  height: 2em;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+}
+
 
 /* topics */
 .my-topics {
@@ -129,13 +158,6 @@ footer {
 
 .yellow {
   background: yellow;
-}
-
-
-.color-options{
-  display: grid;
-  grid-template-columns: repeat(4,2fr);
-  grid-column-gap: 0.5em;
 }
 
 /* navigation topbar*/
@@ -196,10 +218,6 @@ h3 {
 
 /* my collection section */
 
-.collections-section {
-  margin-bottom: 5em;
-}
-
 .title-tab {
   margin-bottom: 2.6em;
   padding: 0.8em;
@@ -224,11 +242,6 @@ h3 {
   position: absolute;
   top: 0;
   right: 0;
-}
-
-/* my topics section  */
-.my-topics-section {
-  margin-bottom: 5em;
 }
 
 /* media queries */
