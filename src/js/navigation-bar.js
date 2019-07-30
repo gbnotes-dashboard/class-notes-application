@@ -28,13 +28,13 @@ const $searchBtnQuery = document.getElementById(`search-btn-query`) // search bt
 
 const checkIfFavAndPrint = () => {
   $myFavourites.innerHTML = ``;
-  getCollectionsAndTags.tags.forEach (tag => {
-    if (tag.favourite) {
-      $favouritesSection.classList.toggle(`hide`);
-      $collectionsSection.classList.toggle(`hide`);
-      $myTopicsSection.classList.toggle(`hide`);
-      $untaggedSection.classList.toggle(`hide`);
-      $myFavourites.innerHTML += getTagAsHtml (tag);
+  $favouritesSection.classList.toggle(`hide`);
+  $collectionsSection.classList.toggle(`hide`);
+  $myTopicsSection.classList.toggle(`hide`);
+  $untaggedSection.classList.toggle(`hide`);
+  myTags.forEach (tag => {
+    if (tag.favourite) {    
+      $myFavourites.innerHTML += getTagAsHtml (tag.tag_id);
     } 
   })
 }
