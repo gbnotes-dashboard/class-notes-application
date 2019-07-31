@@ -81,18 +81,18 @@ const fileInformation ={
  const oneStringToHtml =(note)=>{
      let tag =``;
     if (note.tags.length>1){
-      tag = `Tag Names:`
+      tag = `Tags:`
     }
     else if(note.tags.length==0){
       tag =``
     }
     else{
-      tag = `Tag Name:`
+      tag = `Tag:`
     };
 
     let tagName =``;
     for(let i =0; i<note.tags.length;i++){
-      tagName +=note.tags[i].name +`,`
+      tagName +=`<li class="edit-tag" id="tag-${note.note_id}">${note.tags[i].name} </li>`
     }
     
    
@@ -101,37 +101,31 @@ const fileInformation ={
   if(note.content.tagContent == true){
     dropDownBtn =``
      dropDown =`${note.content.contenInfor}`
-
     }
     else{
       dropDownBtn=`hide-icon`
     }
                         
 
-
- 
-
-   return  `<li class="one-note">
-      <div class ="check-box"><input type="checkbox" name="scales"><label for="scales"></label></div>
+   return  `<li class="one-note" data-noteid="${note.note_id}">
+            <div class ="check-box"><input type="checkbox" name="scales"><label for="scales"></label></div>
             <div><img src="img/file.svg" alt="file-icon"  class="icon-file"></div>
             <div class="file-info">
               <div id="note-title${note.note_id}">Name: ${note.title}</div>
               <div>Date Created: ${note.dateCreated}</div>
               <div>Date Modified:${note.dateModified}</div>
-              <div>${tag}${tagName}</div>
             </div>
             
-            <div><button class="edit-btn" id="edit-btn-${note.note_id}" data-edit ="${note.note_id}"><img src="img/edit.png" alt="edit-icon" class="icon-small"></button></div>
+            
             <div id="dp-btn-${note.note_id}"><button class="drop-down-btn" data-note="${note.note_id}"><img src="img/triangle.png" alt="triangle-drop-down-icon" class="icon-small ${dropDownBtn}" data-type="drop"></button ></div>
-            <div class="drop-down-info hide-icon" id="dd-${note.note_id}">${dropDown}</div>
+            <div class="edit-btn"><button id="edit-btn-${note.note_id}" data-edit ="${note.note_id}"><img src="img/edit.png" alt="edit-icon" class="icon-small"></button></div>
+            <div class="drop-down-info change-text-font hide-icon" id="dd-${note.note_id}">${dropDown}</div>
+            <div class="tag-section">${tag}
+              <ul class="tag-in-grid ">${tagName}</ul>
+            </div>
     </li>`
             
  };
-
-
-
-
-
 
 
 
@@ -141,34 +135,22 @@ const printFilesToHtml =(a)=>{
   $file.innerHTML=``;
   $file.innerHTML=a.map(oneStringToHtml).join(``);
 
-  //one method to make button clickable in JS
-
-  // document.querySelectorAll('.drop-down-btn').forEach(btn => {
-  //   btn.addEventListener(`click`, event => {
-  //     const id = btn.dataset.note;
-  //     document.getElementById(`dd-${id}`).classList.toggle('hide-icon');
-  //   })
-  // })
-
 //when clicking edit button and close button ,edit box is toggled to close and open
 
   document.querySelectorAll(`.edit-btn`).forEach(btn=>{
     btn.addEventListener(`click`,event=>{
    
       const id =btn.dataset.edit;
-      document.getElementById(`edit-contaner`).classList.remove(`hide-icon`)
-     
+      document.getElementById(`edit-contaner`).classList.remove(`hide-icon`) 
     })
   }
   )
 
   document.querySelectorAll(`.close-btn`).forEach(btn=>{
     btn.addEventListener(`click`,event=>{
-      document.getElementById(`edit-contaner`).classList.add(`hide-icon`)
-     
+      document.getElementById(`edit-contaner`).classList.add(`hide-icon`)  
     })
-  })
-  
+  }) 
 }
 
 
@@ -190,9 +172,6 @@ const printTagFiles = (tagNum)=>{
 
 printTagFiles(1);
 
-
-
-
 //Question and problem: how to addEventListener on button in JS
 document.getElementById(`file`).addEventListener(`click`, event => {
 
@@ -211,93 +190,131 @@ document.getElementById(`file`).addEventListener(`click`, event => {
 
 
 
-
-
-
-
-
-
-
 //create edit box to html ********************************************************************
 
 
-  const editBoxToHtml =({title,tags})=>{
-    let tagName =``;
-    for(let i =0; i<tags.length;i++){
-      tagName +=tags[i].name +`,`
-    }
-    return ` <form class="edit-infor" id="edit">
+  const editBoxToHtml =({title,note_id})=>{
+   return ` 
     <div class="btn-close-edit"><button class="close-btn"><img src="img/close-btn.png" alt="close-btn" class="icon-small "></button></div>
-    <div class="grid-start" id="edit-name">
+    <div class="grid-start" id="edit-name-${note_id}">
       <label for="file-name-box">File name:</label>
-      <input type="text" id="file-name-box" name="file-name" value="${title}">
+      <input type="text" id="file-name-box-${note_id}" name="filename" value="${title}">
     </div>
+    <div class="save"><button class="save-btn">Save</button></div>`
 
-    <div class="grid-start">
-      <label>Tag Name: </label>
-      <input type="text" value="${tagName}"> 
-    </div>
-    <div class="submit"><button class="btn-submit">sumbit</button></div>
-  </form> `
   }
 
 
-  //storing note one data
 
 
 
-          const {noteInfor:notes} = fileInformation;
-          [note1,note2,note3,note4] = notes;
+
+
+
+
+
+
+  //destructing note data*******************************************************************
+
+
+
+      const {noteInfor:notes} = fileInformation;
+      let [note1,note2,note3,note4] = notes;
           
-      let noteOneToString = JSON.stringify(note1)
+     let noteToString = JSON.stringify(notes)
    
-     localStorage.setItem(`firstnote`,noteOneToString)
+     localStorage.setItem(`allnotes`,noteToString)
 
-     let noteOneToOb = JSON.parse(localStorage.getItem(`firstnote`)) 
+      let noteToOb = JSON.parse(localStorage.getItem(`allnotes`))
+     
+      let [localnote1,localnote2,localnote3,localnote4]=noteToOb
+
+     let newNote = localStorage.getItem(`allnotes`)
+   
+      
+      
      
   
   //print file name and tags name in the edit box*************************************
-  const $printNote = document.getElementById(`edit-contaner`)
-     const editNoteOne=()=>{
-      $printNote.innerHTML=``
-       $printNote.innerHTML = editBoxToHtml(noteOneToOb)
-     }
+  const $printNote = document.getElementById(`edit-form`);
 
-  // const editNoteOne=()=>{
-  //    $printNote.innerHTML=``
-  //    $printNote.innerHTML =fileInformation.noteInfor.filter(ar=>ar.note_id===1).map(editBoxToHtml)
+ 
+   const editNote =(note)=>{
+    $printNote.innerHTML = ``
+    $printNote.innerHTML = editBoxToHtml(note);
+   }
 
 
-  // };
 
-  // const editNoteTwo=()=>{
-  //   $printNote.innerHTML=``
-  //   $printNote.innerHTML =fileInformation.noteInfor.filter(ar=>ar.note_id===2).map(editBoxToHtml)
-  // };
+    // $printNote.addEventListener('click',event=>{
+    //   if(!event.target.matches('.edit-tag')) return;
 
-  // const editNoteThree=()=>{
-  //   $printNote.innerHTML=``
-  //   $printNote.innerHTML =fileInformation.noteInfor.filter(ar=>ar.note_id===3).map(editBoxToHtml)
-  // }
+    //   const tag_id = event.target.dataset.id;
+    //   const note_id = event.target.closest('ul').dataset.noteid;   
+    //  })
+
+      // Delete the tag_id from the note_id
+      // Recall editNote(note_id)
+      // Find the .one-note with dataset.noteid, recall oneStringToHtml(node_id) and replace it
 
 
 
 
-//edit button to open edit box with original data
- document.querySelector(`#edit-btn-1`).addEventListener(`click`, editNoteOne);
-//  document.querySelector(`#edit-btn-2`).addEventListener(`click`, editNoteTwo);
-//  document.querySelector(`#edit-btn-3`).addEventListener(`click`, editNoteThree);
+
+//submit funtion for the form ********************************************************
+  //   $printNote.addEventListener('submit',event=>{
+  //   event.preventDefault();
+  //     let newName = $printNote.filename.value
+  //     let newTag = $printNote.tagname.value
+      
+      
+      
+       
+  //    if($printNote.filename.id==`file-name-box-1`){
+  //     localnote1.title=newName;
+  //     document.getElementById(`note-title1`).innerText=newName
+  //     document.getElementById(`tag-1`).innerText=newTag
 
 
-     //submit funtion 
-      // const $edit = document.getElementById(`edit`)
-      // $edit.addEventListener(`submit`,event=>{
-      // event.preventDefault();
-      // let fileName = $edit.file-name.value;
-      // localStorage.setItem(`newName`,fileName)
-      // document.getElementById(`note-title1`).innerText=fileName
-      // })
 
-  
+  //    }
+
+  //    if($printNote.filename.id==`file-name-box-2`){
+  //     localnote2.title=newName;
+  //     document.getElementById(`note-title2`).innerText=newName
+  //     document.getElementById(`tag-2`).innerText=newTag
+  //    }
+
+  //    if($printNote.filename.id==`file-name-box-3`){
+  //     localnote3.title=newName;
+  //     document.getElementById(`note-title3`).innerText=newName
+  //     document.getElementById(`tag-3`).innerText=newTag
+  //    }
+  //    document.getElementById(`edit-contaner`).classList.add(`hide-icon`)
+
+  // })
 
 
+ //edit button to open edit box with original data********************************************
+ document.querySelector(`#edit-btn-1`).addEventListener(`click`, event=>{
+  editNote(localnote1)
+});
+document.querySelector(`#edit-btn-2`).addEventListener(`click`, event=>{ 
+  editNote(localnote2)
+ });
+document.querySelector(`#edit-btn-3`).addEventListener(`click`, event=>{
+  editNote(localnote3)
+}); 
+
+
+
+
+
+  //one method to make button clickable in JS*******************************(trick from teacher)
+
+  // document.querySelectorAll('.drop-down-btn').forEach(btn => {
+  //   btn.addEventListener(`click`, event => {
+  //     const id = btn.dataset.note;
+  //     document.getElementById(`dd-${id}`).classList.toggle('hide-icon');
+  //   })
+  // })
