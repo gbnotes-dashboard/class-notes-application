@@ -36,7 +36,7 @@
            </a>
         </div>
        
-        <form class="search-form hide">
+        <form class="search-form hide" id="search-form">
           <button class="icon" id="open-search-menu" type="button" name="open-search-menu">
             <img src="img/search-icon.svg" alt="Open search">
           </button>
@@ -46,13 +46,13 @@
           </button>
 
           <div class="searcharea hide" id="search-area" >
-            <input type="search" name="query" placeholder="type hashtag">
+            <input type="search" id="search" name="query" placeholder="type hashtag">
           </div>
 
-          <button class="hide" id="search-btn-query" type="button" name="search-btn">
-            <a href="search.html">
+          <button class="hide" id="search-btn-query" type="submit" name="search-btn">
+            <!-- <a href="search.html"> -->
               <img src="img/search-icon.svg" alt="Search">
-            </a>
+            <!-- </a> -->
           </button>
         </form>
       </nav>

@@ -128,6 +128,7 @@ const changeFavStatus = (tag) => {
     tag.favourite = !tag.favourite;
 }
 
+/*
 const $favButtonsArray = Array.from(document.getElementsByClassName('fav-btn'));
 
 $favButtonsArray.forEach ( (btn ) => {
@@ -142,4 +143,42 @@ $favButtonsArray.forEach ( (btn ) => {
     // Change the icon of the button 
     replaceFavIcon (btn, tag);
   });
+});*/
+
+addEventListener (`click`, (event) => {
+  const btn = event.target.closest(`button`);
+  if (!btn.matches(`.fav-btn`)) return;
+
+  //find the tag associated with the button
+  const tag = findTagById (btn.dataset.tagId);
+  // Change the favourite property of the tag
+  changeFavStatus (tag);
+  // update local storage
+  setTagsInLocalStorage ();
+  // Change the icon of the button 
+  replaceFavIcon (btn, tag);
+
+});
+
+  /**************************************************************
+                Search by Tag Button
+****************************************************************/
+
+// Take the full set of tags, filter them down to only the ones where "name" matches our search query
+// Lowercase the name and query to ensure a comparison match
+// With the resulting filtered array, map each result to an HTML <li> using getTagAsHtml
+// Join the results as one long string, then insert into #my-topics <ul>
+const showMatchingTags = (query) => {
+
+  const searchedTags = getCollectionsAndTags.tags.filter( prod => prod.name.toLowerCase().includes( query.toLowerCase() ) ).map(tag => getTagAsHtml(tag.tag_id)).join('');
+
+  $mytopics.innerHTML = searchedTags;
+}
+
+document.getElementById(`search-form`).addEventListener(`submit`, (event) => {
+  event.preventDefault();
+
+  let q = document.getElementById(`search`).value;
+  showMatchingTags(q);
+   
 });

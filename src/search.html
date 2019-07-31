@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/searchstyle.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css\files-under-folder.css">
     <style>
       @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
     </style>
@@ -20,7 +21,8 @@
         <button class="icon" id="add-note-btn" type="button" name="add-note-btn">
           <img src="img/add-note-icon.svg" alt="Add note button">
         </button>
-     
+
+
         <button class="icon" id="see-fav-btn" type="button" name="see-fav-btn">
           <img src="img/fav-icon.svg" alt="See favourites button">
         </button>
@@ -36,92 +38,62 @@
         </div>
        
         <form class="search-form" id="search-form">
-          <button class="icon" id="search-btn-menu" type="button" name="search-btn-menu">
+          <button class="hide" id="search-btn-menu" type="button" name="search-btn-menu">
             <img src="img/search-icon.svg" alt="Open search">
           </button>
 
+          <button class="icon" type="button">
+            <img src="img/expand-white-icon.svg" alt="Expand section icon">
+          </button>
+
           <div class="searcharea">
-            <input type="search" id="search-field" name="query" placeholder="type hashtag">
+            <input type="search" id="search" name="query" placeholder="type hashtag">
           </div>
 
-          <button class="icon" id="search-btn-query" type="button" name="search-btn">
-            <img src="img/search-icon.svg" alt="Search">
+          <button class="icon" id="search-btn-query" type="submit" name="search-btn">
+            <!-- <a href="search.html"> -->
+              <img src="img/search-icon.svg" alt="Search">
+            <!-- </a> -->
           </button>
         </form>
       </nav>
     </header> 
 
+  
+
     <main>
-      
-           
-
-      </section>
-      <ul class="key-word-section">
-        <li class="tag-boxs">
-          <h4 class="inline-block"> #Persona </h4>
-          <button class="icon" type="button" name="Cancel">
-            <img src="img/close-btn.png" alt="X">
+      <div class="greeting" id="greeting"></div>
+      <section class="box">
+        <div class="create-box" >
+          <button class="icon close-btn">
+              <img src="img\close-btn.png" alt="close-btn">
           </button>
-        </li>
+          <h3>File Name</h3>
+          <div><input type="text" class="input-bar"></div>
+          <h3>Tag Name</h3>
+          <ul class="color-options">
+            <li class="tag-color bg-red"></li>
+            <li class="tag-color bg-green"></li>
+            <li class="tag-color bg-blue"></li>
+          </ul>
+          <div><input type="text" class="input-bar"></div>
+      </div>
+    </section>  
+        
 
-      <li class="tag-boxs">
-        <h4 class="inline-block"> #Cognition </h4>
-        <button class="icon" type="button" name="Cancel">
-          <img src="img/close-btn.png" alt="X">
-        </button>
-      </li>
-</ul>
-
-      <section class="my-topics-section">
-        <ul class="my-topics">
-          <li class="topic">
-            <div class="topic-icon">
-              <div class="image-link">
-                <a href="files-under-folder.html" class="image-link">
-                  <img src="img/folder-icon-color.svg" alt="Topic folder">
-                </a>
-              </div>
-              <button href= "files-under-folder.html"class="icon fav-btn" type="button" name="fav-btn">
-                <img src="img/faved-icon.svg" alt="Remove from favourites button">
-              </button>
-              <div class="tag-color bg-green"></div>
-            </div>
-            <h3>#Persona #Cognition </h3>
-          </li>
-          </li>
-
-          <li class="topic">
-            <div class="topic-icon">
-              <div class="image-link">
-                <a href="files-under-folder.html" class="image-link">
-                  <img src="img/folder-icon-color.svg" alt="Topic folder">
-                </a>
-              </div>
-              <button class="icon fav-btn" type="button" name="fav-btn">
-                <img src="img/faved-icon.svg" alt="Remove from favourites button">
-              </button>
-              <div class="tag-color bg-green"></div>
-            </div>
-            <h3>#Persona</h3>
-          </li>
-
-          <li class="topic">
-            <div class="topic-icon">
-              <div class="image-link">
-                <a href="files-under-folder.html" class="image-link">
-                  <img src="img/folder-icon-color.svg" alt="Topic folder">
-                </a>
-              </div>
-              <button class="icon fav-btn" type="button" name="fav-btn">
-                <img src="img/faved-icon.svg" alt="Remove from favourites button">
-              </button>
-              <div class="tag-color"></div>
-            </div>
-            <h3>#Cognition</h3>
-          </li>
+      <section class="collections-section">
+        <h2>My Collections</h2>
+        <ul class="my-collections" id="my-collections">
+         
         </ul>
       </section>
-      <main>
+      
+      <section class="my-topics-section">
+        <h2> My Topics </h2>
+        <ul class="my-topics" id="my-topics">
+          
+        </ul>
+      </section>
     </main>
     
     <footer>
@@ -130,7 +102,9 @@
       </div>
     </footer>
       
- 
+    <script src="js/modelled-data-hp.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/note.js"></script>
   </body>
 </html>
