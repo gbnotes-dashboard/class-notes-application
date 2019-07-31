@@ -54,19 +54,22 @@ getCollectionsAndTags.tags.forEach((tag) =>
   /**************************************************************
                 Search by Tag Button
 ****************************************************************/
-  const showMatchingTags = (query) => {
-    getTagAsHtml( tags.filter( prod => prod.name.toLowerCase().includes( query.toLowerCase() ) ) );
 
-    $mytopics.type.visibility =  `hidden`;
-  }
+// Take the full set of tags, filter them down to only the ones where "name" matches our search query
+// Lowercase the name and query to ensure a comparison match
+// With the resulting filtered array, map each result to an HTML <li> using getTagAsHtml
+// Join the results as one long string, then insert into #my-topics <ul>
+const showMatchingTags = (query) => {
 
-    document.getElementById(`search-field`).addEventListener(`submit`, (event) => {
-    event.preventDefault();
-    let q = document.getElementById(`search`).query.value;
-     
- 
-    
-    showMatchingTags(q);
+  const searchedTags = getCollectionsAndTags.tags.filter( prod => prod.name.toLowerCase().includes( query.toLowerCase() ) ).map(getTagAsHtml).join('');
 
+  $mytopics.innerHTML = searchedTags;
+}
+
+document.getElementById(`search-form`).addEventListener(`submit`, (event) => {
+  event.preventDefault();
+
+  let q = document.getElementById(`search`).value;
+  showMatchingTags(q);
    
 });
