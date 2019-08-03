@@ -1,20 +1,20 @@
 const users=[
 {
- user_id:`1`, 
+ user_id:1, 
  firstName:`Gabby`,
  lastNmae:`Kostova`,
  email:`kostovagm@gmail.com`,
  password:`123456`
 },
 {
- user_id:`2`, 
+ user_id:2, 
  firstName:`Leah`,
  lastNmae:`Chow`,
  email:`ctzhouleya@gmail.com`,
  password:`890719`
 },
 {
- user_id:`3`, 
+ user_id:3, 
  firstName:`Damian`,
  lastNmae:`Spaziani`,
  email:`damian.spaziani22@gmail.com`,
