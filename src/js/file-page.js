@@ -92,7 +92,7 @@ const fileInformation ={
 
     let tagName =``;
     for(let i =0; i<note.tags.length;i++){
-      tagName +=`<li class="edit-tag"><button class="delect-tag" data-noteid="${note.note_id}" data-tagindex="${i}">${note.tags[i].name} </button></li>`
+      tagName +=`<li class="edit-tag" data-noteid="${note.note_id}" data-tagindex="${i}">${note.tags[i].name} </li>`
     }
     
    
@@ -139,22 +139,35 @@ const printFilesToHtml =(a)=>{
 
 //edit button funciton *********************************************************************
 
-  document.querySelectorAll(`.button-edit`).forEach(btn=>{
+
+
+  
+  document.querySelectorAll(`.edit-tag`).forEach(btn=>{
     btn.addEventListener(`click`,event=>{
-   
-      document.getElementById(`edit-contaner`).classList.remove(`hide-icon`) 
-      let editNoteNum = btn.dataset.edit
-      editNote(allnote[allnote.findIndex(arr=>arr.note_id==editNoteNum)])
-    })
+   let noteid = btn.dataset.noteid;
+   let tagindex =btn.dataset.tagindex
+   allnote[allnote.findIndex(arr=>arr.note_id==noteid)].tags.splice(tagindex,1)
+   console.log(allnote)
+   setLocalStorage();
+   printTagFiles(1)
   })
+ })
 
+ document.querySelectorAll(`.button-edit`).forEach(btn=>{
+  btn.addEventListener(`click`,event=>{
+ 
+    document.getElementById(`edit-contaner`).classList.remove(`hide-icon`) 
+    let editNoteNum = btn.dataset.edit
+    editNote(allnote[allnote.findIndex(arr=>arr.note_id==editNoteNum)])
+  })
+})
 
-
-  // document.querySelectorAll(`.close-btn`).forEach(btn=>{
-  //   btn.addEventListener(`click`,event=>{
-  //     document.getElementById(`edit-contaner`).classList.add(`hide-icon`)  
-  //   })
-  // }) 
+   document.querySelectorAll(`.close-btn`).forEach(btn=>{
+     btn.addEventListener(`click`,event=>{
+       document.getElementById(`edit-contaner`).classList.add(`hide-icon`)  
+     })
+   }) 
+   
 }
 
 
@@ -264,42 +277,10 @@ document.getElementById(`file`).addEventListener(`click`, event => {
 
 
      
-     
-  //tag buttons delect function ******************************************************************
-
-    
-
-
-
-  document.querySelectorAll(`.delect-tag`).forEach(btn=>{
-    btn.addEventListener(`click`,event=>{
-   let noteid = btn.dataset.noteid;
-   let tagindex =btn.dataset.tagindex
-   
-   allnote[allnote.findIndex(arr=>arr.note_id==noteid)].tags.splice(tagindex,1)
-   console.log(allnote)
-   setLocalStorage();
-   printTagFiles(1)
-
-   
-    
-  })
- })
 
 
 
 
-
-    // $printNote.addEventListener('click',event=>{
-    //   if(!event.target.matches('.edit-tag')) return;
-
-    //   const tag_id = event.target..id;
-    //   const note_id = event.target.closest('ul')..noteid;   
-    //  })
-
-      // Delete the tag_id from the note_id
-      // Recall editNote(note_id)
-      // Find the .one-note with .noteid, recall oneStringToHtml(node_id) and replace it
 
 
 
