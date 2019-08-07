@@ -16,11 +16,11 @@
 
   <body>
     <header>
+      <!-- top bar with navigation -->
       <nav>
         <button class="icon" id="add-note-btn" type="button" name="add-note-btn">
           <img src="img/add-note-icon.svg" alt="Add note button">
         </button>
-
 
         <button class="icon" id="see-fav-btn" type="button" name="see-fav-btn">
           <img src="img/fav-icon.svg" alt="See favourites button">
@@ -35,7 +35,8 @@
             <img src="img/profile-icon.svg" alt="View profile button">
            </a>
         </div>
-       
+
+        <!-- search -->
         <form class="search-form hide" id="search-form">
           <button class="icon" id="open-search-menu" type="button" name="open-search-menu">
             <img src="img/search-icon.svg" alt="Open search">
@@ -50,23 +51,22 @@
           </div>
 
           <button class="hide" id="search-btn-query" type="submit" name="search-btn">
-            <!-- <a href="search.html"> -->
               <img src="img/search-icon.svg" alt="Search">
-            <!-- </a> -->
           </button>
         </form>
       </nav>
     </header> 
 
   
-
+    <!-- page content -->
     <main>
+      <!-- user greeting -->
       <div class="greeting" id="greeting"></div>
-     
+      <!-- create new note popup -->
       <div class="popup-create-new-note hide" id="popup-create-new-note">
         <div class="popup-topbar">
           <button class="icon close-btn" id="close-popup-btn">
-              <img src="img\close-btn.png" alt="close-btn">
+              <img src="img/close-btn.png" alt="close-btn">
           </button>
         </div>
         <h3>File Name</h3>
@@ -95,25 +95,25 @@
           </button>
          </div>
       </div>
-
+      <!--  favourites page -->
       <section class="favourites-section hide" id="favourites-section">
           <h2>My Favourites</h2>
           <ul class="my-favourites my-topics" id="my-favourites">
           </ul>
       </section>
-
+      <!-- collections section -->
       <section class="collections-section" id="collections-section">
         <h2>My Collections</h2>
         <ul class="my-collections" id="my-collections">
         </ul>
       </section>
-      
+      <!-- my topics section -->
       <section class="my-topics-section" id="my-topics-section">
         <h2> My Topics </h2>
         <ul class="my-topics" id="my-topics">
         </ul>
       </section>
-      
+      <!-- untagged section -->
       <section class="untagged-section" id="untagged-section">
         <h2>Untagged files</h2>
         <ul class="my-topics">
@@ -143,7 +143,7 @@
         </ul>
       </section>
     </main>
-    
+    <!-- footer -->
     <footer>
       <div class="copyright">
         &copy; 2019 Hashtag Notes

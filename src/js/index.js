@@ -4,9 +4,9 @@
 
 //--------------------------------------//
 
-const $greeting = document.getElementById(`greeting`); // greeting user
+const $greeting = document.getElementById(`greeting`);            // greeting of the user
 const $mycollections = document.getElementById(`my-collections`); //my collections 
-const $mytopics = document.getElementById(`my-topics`); //my topics
+const $mytopics = document.getElementById(`my-topics`);           //my topics
 
 
 //--------------------------------------//
@@ -14,7 +14,6 @@ const $mytopics = document.getElementById(`my-topics`); //my topics
 //****** HELPER FUNCTIONS *********/
 
 //--------------------------------------//
-
 
 //Function takes a tag_id and returns a tag object containing that id
 const findTagById = (tag_id) => {
@@ -25,10 +24,9 @@ const findTagById = (tag_id) => {
 
 
 //Function takes a tag and returns a string of formatted html displaying this tag as a folder image with its properties: color, favourite status, name
-
 const getTagAsHtml = ( t_id ) => {
  const t = findTagById(t_id);
-
+  //if statement checks whether a tag has been favourited or not and displays the respective image (filled vs empty star);
   let star = ``;
   if(t.favourite) {
     star =`<img src="img/faved-icon.svg" alt="Remove from favourites button">`
@@ -55,41 +53,39 @@ const getTagAsHtml = ( t_id ) => {
 };
 
 
-
 //--------------------------------------//
 
 //****** LOCAL STORAGE *********/
 
 //--------------------------------------//
-// Function that sets tags in local storage
+
+// Function sets tags in local storage
 const setTagsInLocalStorage = () => {  
   const tags_str = JSON.stringify(myTags);
   localStorage.setItem('tags', tags_str);
 }
 
-// Function that gets tags from local storage
+// Function gets tags from local storage
 const getTagsFromLocalStorage = () => {
   const tags_str = localStorage.getItem('tags');
   const tags_arr = JSON.parse(tags_str);
   return tags_arr;
 }
 
-//Location of the tags array
+//Location of the tags array; default is local storage; if local storage is empty, get tags from existing modelled data.
 const myTags = getTagsFromLocalStorage() || getCollectionsAndTags.tags;
 
-//--------------------------------------//
-
-//****** AUTOMATICALLY GENERATED CONTENT *********/
 
 //--------------------------------------//
 
+//****** APPLICATION *********/
 
+//--------------------------------------//
 
-//Generate user-specific greeting
+//Generate a user-specific greeting
 $greeting.innerHTML = `Hello, ${getCollectionsAndTags.firstName}!`;
 
 //All collections with their respective tags are generated as formatted HTML
-
   $mycollections.innerHTML = getCollectionsAndTags.collections.map (col => 
 	`<div class="title-tab">
     <span class="tab-title">${col.name}</span>
@@ -114,6 +110,7 @@ console.log(myTags)
 
 //--------------------------------------//
 
+//function takes a fav button and its tag and changes the fav button's content (icon) depending on whether its tag has been favourited or not
 const replaceFavIcon = (btn, tag) => {
   let star = ``;
   if(tag.favourite) {
@@ -123,42 +120,32 @@ const replaceFavIcon = (btn, tag) => {
   }
   btn.innerHTML = star;
 }
-
+//function takes a tag and changes the value of its favourite property to its opposite
 const changeFavStatus = (tag) => {
     tag.favourite = !tag.favourite;
 }
 
-/*
-const $favButtonsArray = Array.from(document.getElementsByClassName('fav-btn'));
-
-$favButtonsArray.forEach ( (btn ) => {
-  //Add a click listener for every button
-  btn.addEventListener (`click`, (event) => {
-    //find the tag associated with the button
-    const tag = findTagById (btn.dataset.tagId);
-    // Change the favourite property of the tag
-    changeFavStatus (tag);
-    // update local storage
-    setTagsInLocalStorage ();
-    // Change the icon of the button 
-    replaceFavIcon (btn, tag);
-  });
-});*/
-
+//create a function that changes the status and icon of the favourite button when the user clicks on it;
+//add event listener to the body
 addEventListener (`click`, (event) => {
+
+  //inside the body, find the fav button the user had clicked; if no button was clicked, stop function here;
   const btn = event.target.closest(`button`);
   if (!btn.matches(`.fav-btn`)) return;
 
-  //find the tag associated with the button
+  //find the tag associated with the clicked fav button and assign it to a new variable;
   const tag = findTagById (btn.dataset.tagId);
-  // Change the favourite property of the tag
-  changeFavStatus (tag);
-  // update local storage
-  setTagsInLocalStorage ();
-  // Change the icon of the button 
-  replaceFavIcon (btn, tag);
 
+  //change the favourite property of the tag
+  changeFavStatus (tag);
+
+  //update local storage with the new data
+  setTagsInLocalStorage ();
+
+  //change the icon of the fav button 
+  replaceFavIcon (btn, tag);
 });
+
 
   /**************************************************************
                 Search by Tag Button
